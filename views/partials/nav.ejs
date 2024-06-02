@@ -1,0 +1,22 @@
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-lg font-semibold">
+            <a href="/">Blog Platform</a>
+        </div>
+        <div>
+
+            <% if(user){ %>
+                <a href="/" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition">Home</a>
+                <a href="/logout" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition">Logout</a>
+                <a href="/blogs" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition"></a>
+            <% }else{ %>
+                <a href="/" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition">Home</a>
+                <a href="/login" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition">Login</a>
+                <a href="/" class="text-white px-4 py-2 hover:bg-blue-600 rounded transition">Register</a>
+            <% } %>
+
+            
+            
+        </div>
+    </div>
+</nav>

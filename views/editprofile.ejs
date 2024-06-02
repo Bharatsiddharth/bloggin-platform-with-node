@@ -1,0 +1,55 @@
+<%- include("./partials/header") %>
+
+<%- include("./partials/nav") %>
+
+
+    <div>
+        
+<form class="hidden form-image" action="/image/<%= user._id%>" method="post" enctype="multipart/form-data">
+            
+    <input class="input-image" type="file" name="profilepic">
+
+</form>
+
+<form class="hidden form-image" action="images/<%= user._id %>" method="post" enctype="multipart/form-data" >
+    <input class="input-image" type="file" name="profilepic">
+</form>
+
+
+
+<img class="preview-image h-20 w-20" src="/images/<%= user.profilepic %>" alt="">
+
+<h2><%= user.name %></h2>
+
+
+
+<form class="" action="/update-user/<%= user._id %>" method="post">
+  <input type="text" placeholder="Enter username" name="username" value="<%= user.username %>"> <br> <br>
+  <input type="email" placeholder="Enter your email" name="email" value="<%= user.email %>"> <br> <br>
+  <button><a href="/delete/<%= user._id %>">delete user</a></button>
+  <button><a href="/update/<%= user._id %>">Update user</a></button>
+</form>
+
+
+
+
+    </div>
+
+      <script>
+        const inputimage = document.querySelector(".input-image");
+        const previewimage = document.querySelector(".preview-image");
+        const formimage = document.querySelector(".form-image")
+        previewimage.addEventListener("click", function() {
+            inputimage.click()
+        })
+        inputimage.addEventListener("change", function () {
+            formimage.submit()
+        })
+
+
+
+
+      </script>
+
+
+<%- include("./partials/footer") %>
